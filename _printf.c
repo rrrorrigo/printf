@@ -74,3 +74,4 @@ int _function(const char *format, formato print[], va_list up)
 	}
 	return (stringLength);
 }
+
