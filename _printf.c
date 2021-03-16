@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 		{"s", _string},
 		{"%", _sign},
 		{"u", _unsignedInt},
+		{"R", _rot},
 		{NULL, NULL}
 	};
 	va_list up;
