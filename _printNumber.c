@@ -39,8 +39,6 @@ int _unsignedInt(va_list up)
 	unsigned int len = 0, divisor = 1, check;
 
 	check = va_arg(up, unsigned int);
-	if (check < 0)
-		return (-1);
 	while (check / divisor > 9)
 		divisor = divisor * 10;
 	while (divisor != 0)
