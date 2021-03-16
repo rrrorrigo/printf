@@ -8,7 +8,7 @@
 int _int(va_list up)
 {
 	int check = va_arg(up, int), charLength = 0, divisor = 1;
-	unsigned int aux = 0;
+	unsigned int aux;
 
 	if (!check)
 		return (-1);
@@ -18,7 +18,9 @@ int _int(va_list up)
 		aux = check * (-1);
 		charLength++;
 	}
-	while (check / divisor > 9)
+	else
+		aux = check;
+	while (aux / divisor > 9)
 		divisor = divisor * 10;
 	while (divisor != 0)
 	{
