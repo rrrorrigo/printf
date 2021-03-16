@@ -13,19 +13,23 @@ int _rot13(va_list rot)
 	char letters[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[53] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (s[i] != '\0')
+	for(i = 0; s[i]; i++)
 	{
-		for (counter = 0; counter < 52; counter++)
-			if (s[counter] == letters[i])
+		for (j = 0; j < 52; j++)
+			if (s[i] == letters[j])
+			{
+				_putchar(rot13[j]);
+				break;
+			}
+		if (s[i] == letters[j])
 			{
 				_putchar(rot13[j]);
 				counter++;
 			}
-			else
-			{
-				_putchar(s[i]);
-				counter++;
-			}
-		counter++;
-		return (s);
+		else
+		{
+			_putchar(s[i]);
+			counter++;
+		}
+		return (counter);
 }
