@@ -11,6 +11,8 @@ int _sign(va_list);
 int _string(va_list);
 int _unsignedInt(va_list);
 int _putchar(char c);
+int _rot13(va_list rot);
+
 /**
  * struct formato - struct that check the format and call the functions
  * @c: char to check
