@@ -13,7 +13,6 @@ int _unsignedInt(va_list);
 
 /**
  * struct formato - struct that check the format and call the functions
- *
  * @c: char to check
  * @f: function to call
  * Description: check the format and call the function
