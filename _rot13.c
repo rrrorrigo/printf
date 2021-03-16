@@ -26,5 +26,6 @@ int _rot13(va_list rot)
 				_putchar(s[i]);
 				counter++;
 			}
-		return (counter);
+		counter++;
+		return (s);
 }
