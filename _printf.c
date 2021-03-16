@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[ii + 1] == *(print[i].c))
 				{
-					stringLength = print[i].f(up);
+					stringLength += print[i].f(up);
 					i = 0;
 					break;
 				}
