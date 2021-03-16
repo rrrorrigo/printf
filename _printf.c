@@ -1,0 +1,48 @@
+#include "holberton.h"
+#include <string.h>
+#include <stddef.h>
+/**
+ * _printf - print a string depending format received
+ * @format: format to print
+ *
+ * Return: length of string to print
+ */
+int _printf(const char *format, ...)
+{
+	formato print[] = {
+		{"c", _char},
+		{"i", _int},
+		{"d", _int},
+		{"s", _string},
+/*		{'%', _sign},*/
+		{NULL, NULL}
+	};
+	int stringLength = 0, i = 0, ii = 0;
+	va_list up;
+
+	va_start(up, format);
+	while (format && format[ii] != '\0')
+	{
+		if (format[ii] == '%')
+		{
+			while (print[i].c != NULL)
+			{
+				if (format[ii + 1] == *(print[i].c))
+				{
+					stringLength = print[i].f(up);
+					break;
+				}
+				i++;
+			}
+			ii++;
+		}
+		else
+		{
+			_write(format[ii]);
+			stringLength++;
+		}
+		ii++;
+	}
+	va_end(up);
+	return (stringLength);
+}
