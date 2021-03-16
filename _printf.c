@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _printf - call function that call functions that print
+ * _printf - call function that calls functions that print
  * @format: string to print
  * Return: string length
  */
