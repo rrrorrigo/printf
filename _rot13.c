@@ -9,7 +9,7 @@ int _rot13(va_list rot)
 {
 	int i, j;
 	int counter = 0;
-	char *s = va_arg(arg, char *)
+	char *s = va_arg(rot, char *)
 	char letters[53] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot13[53] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
