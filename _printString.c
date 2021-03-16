@@ -23,8 +23,8 @@ int _string(va_list up)
 
 	string = va_arg(up, char*);
 	if (string == NULL)
-		_write("(null)");
-	for (; string[i] != '\0'; i++)
+		string = "(null)";
+	for (;string[i] != '\0'; i++)
 		_write(string[i]);
 	return (i);
 }
