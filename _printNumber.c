@@ -10,25 +10,28 @@ int _int(va_list up)
 	int check = va_arg(up, int), charLength = 0, divisor = 1;
 	unsigned int aux;
 
-	if (!check)
-		return (-1);
-	if (check < 0)
+	if (check)
 	{
-		_write('-');
-		aux = check * (-1);
-		charLength++;
-	}
-	else
-		aux = check;
-	while (aux / divisor > 9)
-		divisor = divisor * 10;
-	while (divisor != 0)
-	{
+		if (check < 0)
+		{
+			_write('-');
+			aux = check * (-1);
+			charLength++;
+		}
+		else
+			aux = check;
+		while (aux / divisor > 9)
+			divisor = divisor * 10;
+		while (divisor != 0)
+		{
 		charLength += _write('0' + aux / divisor);
 		aux = aux % divisor;
 		divisor = divisor / 10;
+		}
+		return (charLength);
 	}
-	return (charLength);
+	else
+		return (-1);
 }
 
 /**
