@@ -45,7 +45,10 @@ int _printf(const char *format, ...)
 		ii++;
 	}
 	if (format[0] == '\0')
+	{
+		_write('\0');
 		return (1);
+	}
 	va_end(up);
 	return (stringLength);
 }
