@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 	int stringLength = 0, i = 0, ii = 0;
 	va_list up;
 
+	if (!format)
+		return (-1);
 	va_start(up, format);
 	while (format && format[ii] != '\0')
 	{
@@ -27,7 +29,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[ii + 1] == *(print[i].c))
 				{
-					stringLength += print[i].f(up);
+					stringLength = print[i].f(up);
 					break;
 				}
 				i++;
@@ -42,5 +44,5 @@ int _printf(const char *format, ...)
 		ii++;
 	}
 	va_end(up);
-	return (stringLength);
+	return (stringLength - 1);
 }

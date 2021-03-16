@@ -22,7 +22,8 @@ int _string(va_list up)
 	int i = 0;
 
 	string = va_arg(up, char*);
-
+	if (!string)
+		return (-1);
 	for (; string[i] != '\0'; i++)
 		_write(string[i]);
 	return (i);
@@ -34,7 +35,7 @@ int _string(va_list up)
  *
  * Return: length of string
  */
-int _sign(va_list up)
+int _sign(__attribute__((unused)) va_list up)
 {
 	_write('%');
 	return (1);
