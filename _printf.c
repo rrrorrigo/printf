@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 	return (stringLength);
 }
 /**
- * _function - call a functio that print
+ * _function - call a function that print
  * @format: format to print
  * @print: format to check
  * @up: variadic list
