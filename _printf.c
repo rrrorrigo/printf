@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 		}
 		ii++;
 	}
+	_write('\0');
 	va_end(up);
 	return (stringLength);
 }
