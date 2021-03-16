@@ -17,7 +17,7 @@ int main(void)
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	_printf("AA % \n", NULL);
-	len2 = _printf("\0");
+	len2 = _printf("%i\n", 123456789);
 	_printf("\n");
 	_printf("\\");
 	_printf("Negative:[%d]\n", -762534);

@@ -11,7 +11,6 @@ int _int(va_list up)
 
 	if (!check)
 		return (-1);
-
 	if (check < 0)
 	{
 		_write('-');
@@ -22,10 +21,9 @@ int _int(va_list up)
 		divisor = divisor * 10;
 	while (divisor != 0)
 	{
-		_write('0' + check / divisor);
-		charLength++;
+		charLength += _write('0' + check / divisor);
 		check = check % divisor;
 		divisor = divisor / 10;
 	}
-	return (charLength);
+	return (charLength - 1);
 }
