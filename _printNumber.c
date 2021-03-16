@@ -25,5 +25,5 @@ int _int(va_list up)
 		check = check % divisor;
 		divisor = divisor / 10;
 	}
-	return (charLength - 1);
+	return (charLength);
 }
