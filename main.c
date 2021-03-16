@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	int len;
+	int len, len2;
 	unsigned int ui;
 	void *addr;
 
@@ -17,12 +17,12 @@ int main(void)
 	ui = (unsigned int)INT_MAX + 1024;
 	addr = (void *)0x7ffe637541f0;
 	_printf("AA % \n", NULL);
-	_printf("\0");
+	len2 = _printf("\0");
 	_printf("\n");
 	_printf("\\");
 	_printf("Negative:[%d]\n", -762534);
 
-	_printf("Length:[%d, %i]\n", len, len);
+	_printf("Length:[%d, %i]\n", len, len2);
 	_printf("Unsigned:[%u]\n", ui);
 	_printf("Unsigned octal:[%o]\n", ui);
 	_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
