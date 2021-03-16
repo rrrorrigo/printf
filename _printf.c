@@ -1,9 +1,8 @@
 #include "holberton.h"
 /**
- * _printf - print a string depending format received
- * @format: format to print
- *
- * Return: length of string to print
+ * _printf - call function that call functions that print
+ * @format: string to print
+ * Return: string length
  */
 int _printf(const char *format, ...)
 {
@@ -13,15 +12,31 @@ int _printf(const char *format, ...)
 		{"d", _int},
 		{"s", _string},
 		{"%", _sign},
-		{"ui", _unsignedInt},
+		{"u", _unsignedInt},
 		{NULL, NULL}
 	};
-	int stringLength = 0, i = 0, ii = 0;
 	va_list up;
+	int stringLength = 0;
 
 	if (!format)
 		return (-1);
 	va_start(up, format);
+	stringLength = _function(format, print, up);
+	va_end(up);
+	return (stringLength);
+}
+/**
+ * _function - call a functio that print
+ * @format: format to print
+ * @print: format to check
+ * @up: variadic list
+ *
+ * Return: length of string to print
+ */
+int _function(const char *format, formato print[], va_list up)
+{
+	int i = 0, ii = 0, stringLength = 0;
+
 	while (format && format[ii] != '\0')
 	{
 		if (format[ii] == '%')
@@ -56,6 +71,5 @@ int _printf(const char *format, ...)
 		}
 		ii++;
 	}
-	va_end(up);
 	return (stringLength);
 }

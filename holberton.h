@@ -10,7 +10,6 @@ int _int(va_list);
 int _sign(va_list);
 int _string(va_list);
 int _unsignedInt(va_list);
-
 /**
  * struct formato - struct that check the format and call the functions
  *
@@ -23,7 +22,7 @@ typedef struct formato
 	char *c;
 	int (*f)(va_list);
 } formato;
-
+int _function(const char *format, formato print[], va_list up);
 int _printf(const char *format, ...);
 int _write(char c);
 #endif
