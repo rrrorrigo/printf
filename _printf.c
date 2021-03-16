@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 		{"d", _int},
 		{"s", _string},
 		{"%", _sign},
+		{"ui", _unsignedInt},
 		{NULL, NULL}
 	};
 	int stringLength = 0, i = 0, ii = 0;
@@ -34,6 +35,17 @@ int _printf(const char *format, ...)
 					break;
 				}
 				i++;
+			}
+			if (print[i].c == NULL && format[ii + 1] != ' ')
+			{
+				if (format[ii + 1] != '\0')
+				{
+					_write(format[ii]);
+					_write(format[ii + 1]);
+					stringLength += 2;
+				}
+				else
+					return (-1);
 			}
 			ii++;
 		}

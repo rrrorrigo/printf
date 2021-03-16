@@ -9,6 +9,7 @@ int _char(va_list);
 int _int(va_list);
 int _sign(va_list);
 int _string(va_list);
+int _unsignedInt(va_list);
 
 /**
  * struct formato - struct that check the format and call the functions
