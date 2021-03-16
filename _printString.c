@@ -22,8 +22,8 @@ int _string(va_list up)
 	int i = 0;
 
 	string = va_arg(up, char*);
-	if (!string)
-		return (-1);
+	if (string == NULL)
+		_write("(null)");
 	for (; string[i] != '\0'; i++)
 		_write(string[i]);
 	return (i);
