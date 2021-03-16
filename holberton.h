@@ -7,7 +7,7 @@
 
 int _char(va_list);
 int _int(va_list);
-int _float(va_list);
+int _sign(va_list);
 int _string(va_list);
 
 /**

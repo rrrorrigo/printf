@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <string.h>
-#include <stddef.h>
 /**
  * _printf - print a string depending format received
  * @format: format to print
@@ -14,7 +12,7 @@ int _printf(const char *format, ...)
 		{"i", _int},
 		{"d", _int},
 		{"s", _string},
-/*		{'%', _sign},*/
+		{"%", _sign},
 		{NULL, NULL}
 	};
 	int stringLength = 0, i = 0, ii = 0;
@@ -29,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[ii + 1] == *(print[i].c))
 				{
-					stringLength = print[i].f(up);
+					stringLength += print[i].f(up);
 					break;
 				}
 				i++;

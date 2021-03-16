@@ -27,3 +27,15 @@ int _string(va_list up)
 		_write(string[i]);
 	return (i);
 }
+
+/**
+ * _sign - print a porcentage
+ * @up: variadic list
+ *
+ * Return: length of string
+ */
+int _sign(va_list up)
+{
+	_write('%');
+	return (1);
+}
